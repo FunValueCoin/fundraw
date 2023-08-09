@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abyssinica+SIL&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/draw_styles.css">
+</head>
+
+<body style="background: #4285f4;">
+    <div class="container" style="padding-left: 47px;padding-top: 33px;width: 591px;">
+        <div class="row" style="width: 480px;margin: 1px;margin-right: 0px;margin-left: 0px;">
+            <div class="col" style="text-align: center;padding: 0px;">
+                <div class="card" style="text-align: center;">
+                    <div class="card-body" id="tools" style="padding: 0px;margin: 0px;background: #ffe500;width: 480px;">
+                        <button class="btn btn-primary" id="pencil" style="background: var(--bs-btn-active-border-color);color: var(--bs-yellow);height: 60px;width: 60px;font-family: 'Abril Fatface', serif;font-size: 54px;padding: 0PX;font-weight: bold;text-align: center;padding-bottom: 0px;letter-spacing: 0px;line-height: 18px;"><strong>+</strong></button>
+                        <button class="btn btn-secondary" id="eraser" style="width: 60px;height: 60px;background: #ffa000;color: #4285f4;font-weight: bold;font-size: 59px;padding: 0px;padding-left: 0px;padding-bottom: 10px;padding-right: 0px;text-align: center;line-height: 0.5px;">-</button>
+                        <button class="btn btn-danger" id="undoButton" style="color: #4285f4;font-size: 48px;width: 60px;height: 60px;background: var(--bs-yellow);border-color: #4285f4;font-weight: bold;line-height: 0px;padding: 0px;padding-right: 10px;padding-left: 9px;padding-bottom: 12px;"><strong>↺</strong></button>
+                        <button class="btn btn-primary" id="toggle-grid" style="width: 60px;height: 60px;background: #ffc107;border-radius: 4px;border-top-left-radius: 6px;border-top-right-radius: 6px;color: var(--bs-btn-active-border-color);font-size: 12px;text-align: center;line-height: 11px;letter-spacing: 0px;border-width: 4px;border-color: var(--bs-btn-active-border-color);padding: 0px;padding-top: 0px;" type="button"><span style="text-decoration: underline line-through;">I I I I I I I I I I I I I I I I I I I I I I I I</span><br><span style="text-decoration: underline line-through;">I I I I I I I I I I I I I I I I</span><br></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="width: 480px;margin: 1px;">
+            <div class="col" style="width: 491px;padding: 0px;padding-right: 0px;">
+                <div class="card" style="width: 480px;height: 480px;">
+                    <div style="position: relative;background: #00000000;width: 480px;">
+                        <canvas class="Pixel-Canvas" id="canvas"></canvas>
+                        <canvas class="Pixel-Canvas" id="gridCanvas" style="position:absolute;left:0;top:0;"></canvas>
+                    </div>
+                </div>
+                <div class="rubberBand animated card-body" id="palette" style="width: 480px;">
+                    <table id="color-palette">
+                        <tbody style="background: #ffffff;border-width: 3px;border-color: #ffd900;width: 456.778px;">
+                            <tr style="width: 439.778px;">
+                                <td>
+                                    <div class="color selected" style="background-color:#000000;"></div>
+                                </td>
+                                <td>
+                                    <div class="color" style="background-color:#FF0000;"></div>
+                                </td>
+                                <td>
+                                    <div class="color" style="background-color:#00FF00;"></div>
+                                </td>
+                                <td>
+                                    <div class="color" style="background-color:#0000FF;"></div>
+                                </td>
+                                <td>
+                                    <div class="color" style="background-color:#FFFF00;"></div>
+                                </td>
+                                <td>
+                                    <div class="color" style="background-color:#00FFFF;"></div>
+                                </td>
+                                <td>
+                                    <div class="color" style="background-color:#00FFFF;"></div>
+                                </td>
+                                <td>
+                                    <div class="color" style="background-color:#00FFFF;"></div>
+                                </td>
+                                <td>
+                                    <div class="color" style="background-color:#00FFFF;"></div>
+                                </td>
+                                <td>
+                                    <div class="color" style="background-color:#00FFFF;"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="customColorPicker" style="border: 1px solid #000; padding: 10px; width: 280px; display: true;">
+                    <canvas id="colorShadeCanvas" width="200" height="200" style="border: 1px solid #000;"></canvas>
+                    <canvas id="colorHueCanvas" width="20" height="200" style="border: 1px solid #000; margin-left: 10px;"></canvas>
+                    <div id="colorPreview" style="width: 50px; height: 50px; margin-top: 10px;"></div>
+                    HEX: <input type="text" id="hexValue">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/Modified_Drawing_script.js"></script>
+</body>
+
+</html>
